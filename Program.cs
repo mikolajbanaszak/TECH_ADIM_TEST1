@@ -10,7 +10,7 @@ namespace TESTZC
     {
         static void Main(string[] args)
         {
-            List<Figura> lista = new List<Figura>();
+            Screen screen = new Screen();
             Figura figura = null;
             bool error;
             bool again;
@@ -64,7 +64,7 @@ namespace TESTZC
                 Console.WriteLine("Chcesz zapisać do listy? jesli tak to 1");
                 if (int.Parse(Console.ReadLine()) == 1)
                 {
-                    lista.Add(figura);
+                    screen.add(figura);
                 }
                 
                 Console.WriteLine("Chcesz jeszcze raz? jesli tak to 1");
@@ -75,10 +75,7 @@ namespace TESTZC
 
             } while (again);
 
-            foreach(Figura f in lista)
-            {
-                Console.WriteLine("Id: Clasa: {0} Obwód: {1} Pole: {2} ", f.GetType().ToString(), f.obObwod(), f.obPole());
-            }
+            screen.print();
 
             Console.ReadKey();
 
