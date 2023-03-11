@@ -6,28 +6,23 @@ using System.Threading.Tasks;
 
 namespace TESTZC
 {
-    internal class Prostokat : Figura
+    internal class Rectangle : Figura
     {
-        public override int Pole { get; set; }
-        public override int Obwod { get; set; }
+        private int a;
+        private int b;
 
-        public override void zakoncz()
+        public Rectangle(int a, int b)
         {
-            Console.WriteLine("Podaj  bok");
-            int a = int.Parse(Console.ReadLine());
-            Console.WriteLine("Podaj 2  bok");
-            int b= int.Parse(Console.ReadLine());
-            Pole = obPole(a , b);
-            Obwod = obObwod(a , b);
-            Console.WriteLine("Pole: {0} Obwod: {1}", Pole, Obwod);
-
+            this.a = a;
+            this.b = b;
         }
-        public override int obObwod(int a , int b)
+
+        public override int obObwod()
         {
             return (a * 2)+(b*2);
         }
 
-        public override int obPole(int a , int b)
+        public override int obPole()
         {
             return a * b;
         }
